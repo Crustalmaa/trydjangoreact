@@ -1,0 +1,182 @@
+.MenuStructure{
+    width: 100%;
+    background-image: linear-gradient(to right, #9176D7, #787BED);
+    height: 54px;
+    padding: 0;
+    display: block;
+}
+@media only screen and (max-width: 990px){
+    .MenuStructure{
+        display: none;
+    }   
+}
+.OuterListToggled{
+    display: flex;
+    flex-direction: column;
+}
+.MenuStructureToggled{
+    display: block;
+    width: 100%;
+    background-image: linear-gradient( #9176D7, #787BED);
+    height: auto;
+}
+.OuterList{
+   display : flex;
+   align-items: center;
+   margin: 0; 
+    height: 54px;
+}
+.MenuStructure ul li{
+    list-style: none;
+    margin-right: 30px;
+    padding-top: 15px;
+    height: 100%;
+    color: rgba(255, 255, 255, .5);
+    font-size: 14px;
+    font-style:italic;
+    padding-right: 20px;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 500;
+    position: relative;
+}
+.MenuStructure ul li:hover .MenuStructure ul li ul{
+    color: #D1DDF8;
+    display: block;
+}
+.MenuStructure ul li i{
+    margin-right: 10px;
+}
+.MenuStructure ul li span{
+    margin-left: 5px;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    font-weight: 100;
+}
+.InnerList{
+    position: absolute;
+    display: none;
+    top: 54px;
+    height: auto !important;
+    width: auto !important;
+    background-color:white;
+    border: 1px solid #D8E3E9;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left: -20px !important;
+    padding-inline-start: 0px;
+    
+    z-index: 10;
+}
+
+.InnerList li{
+
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 160px !important;
+    overflow: show;
+    display: none;
+}
+
+.InnerList li a{
+    width: auto !important;
+    display: block;
+    width: 100% !important;
+    padding: .3rem;
+    clear: both;
+    font-weight: 400;
+    color: #6c757d;
+    font-family:  'Arial Narrow', Arial, sans-serif;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    text-decoration: none;
+    padding:  10px 0 10px 20px !important;
+    
+}
+.InnerList li a:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.InnerList li a:hover, 
+.InnerList li a:active{
+    background-color: #F8F9FA;
+
+    width: 100%;
+}
+.OuterListItem:hover .InnerList{
+    display: flex;
+    flex-direction: column;
+}
+.OuterListItem:hover .InnerList li{
+    display: flex;
+}
+.OuterListItemToggled{
+    list-style: none;
+padding: 12px;
+display: grid;
+grid-template-columns: 20px 1fr 20px;
+align-items: center;
+}
+.InnerListToggled{
+    display: none;
+    width: 100vw;
+
+}
+.InnerListToggled li{
+    list-style:none;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.InnerListToggled li a{
+    color: #C2BBF0;
+    font-family:  'Arial Narrow', Arial, sans-serif;
+    text-align: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100%;
+}
+.OuterListItemToggled:hover .InnerListToggled{
+    display: block;
+
+}
+
+
+
+
+
+
+
+
+.MenuStructureToggled ul li{
+    list-style: none;
+    margin-right:30px;
+    padding-top: 15px;
+    height: 100%;
+    color: rgba(255, 255, 255, .5);
+    font-size: 14px;
+    font-style:italic;
+    padding-right: 20px;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 500;
+    position: relative;
+}
+.MenuStructureToggled ul li:hover .MenuStructure ul li ul{
+    color: #D1DDF8;
+    display: block;
+
+}
+.MenuStructureToggled ul li i{
+    margin-right: 10px;
+}
+.OuterListItemToggled span{
+
+    font-size: 20px;
+
+    font-weight: 100;
+    
+}
+.OuterListItemToggled:hover{
+    color: white;
+}

@@ -1,0 +1,232 @@
+
+.Vehicle{
+    width: 85%;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+@media only screen and (max-width: 1200px){
+    .Vehicle{
+        width: 100%;
+    }
+}
+
+.Tab ul{
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ padding-inline-start: 0;
+}
+.TabText{
+    display: block;
+    margin-left: 3%;
+    width: 70%;
+}
+@media only screen and (max-width: 700px){
+    .TabText{
+        display: none;
+    }
+}
+.Tab ul li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    height: 54px;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 10px auto;
+}
+.SelectedTab{
+    background-color: #767CF0;
+
+    color: white;
+}
+.UnselectedTab{
+    background-color: #E2EAEF;
+    color: #6C757D;
+
+}
+
+.VehicleContainer{
+    width: 90%;
+    margin: 0 auto;
+
+}
+.line {
+    width: 100%;
+  
+}
+.stripesLoader {
+    margin: 4px;
+    height: 5px;
+    /*should not be larger than 20px*/
+    position: relative;
+    background: linear-gradient(90deg, #eee 50%, transparent 50%);
+    background-color: #0acf97 !important;
+    background-size: 200%;
+    background-position: 80%;
+    border-radius: 5px;
+    transform: scale(-1);
+    transition: 0.3s;
+  }
+  
+  .stripesLoader:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(
+      45deg,
+      transparent 25%,
+      rgba(238, 238, 238, 0.5) 25%,
+      rgba(238, 238, 238, 0.5) 30%,
+      transparent 30%,
+      transparent 35%,
+      rgba(238, 238, 238, 0.5) 35%,
+      rgba(238, 238, 238, 0.5) 70%,
+      transparent 70%
+    );
+    animation: shift 2s linear infinite;
+    background-size: 60px 100%;
+    box-shadow: inset 0 0px 1px rgba(0, 0, 0, 0.2),
+      inset 0 -2px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes shift {
+    to {
+      background-position: 60px 100%;
+    }
+  }
+.prevNextcont{
+    display: flex;
+    justify-content: space-between;
+}
+.prevNextcont button{
+    color: #fff;
+    background-color: #39afd1;
+    border-color: #39afd1;
+    border-radius: 5px;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    box-shadow: 0 2px 6px 0 rgba(57, 175, 209, .5);
+    font-style: italic;
+}
+.prevNextcont button:active, .prevNextcont button:focus, .prevNextcont button:hover{
+    background-color: #2991ae;
+    border-color: #2688a4;
+}
+.Prev{
+    
+    margin-right: auto;
+}
+.Next{
+    
+}
+.formElement{
+    
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    font-size: 13px;
+    color: #6C757D;
+    padding: 10px 0;
+    font-style: italic;
+    align-items: center;
+
+
+}
+@media only screen and (max-width: 767px){
+    .formElement{
+       display: grid;
+       grid-template-columns: 1fr;
+    }
+   
+    
+}
+.textInput{
+    margin-right: -30px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    width: 100%;
+    border: 1px solid #DEE2E6;
+    outline: none;
+}
+.textInputDanger{
+    border: 1px solid red;
+}
+.textInputSuccess{
+    border: 1px solid green;
+}
+
+.textInput::-webkit-input-placeholder{
+    color: #ADB5BC;
+    font-style: italic;
+}
+.formReg{
+
+
+}
+.formGeneral{
+    width: 95%;
+    margin: 0 auto;
+}
+.generalTabExtra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #6C757D;
+}
+.generalTabExtra i{
+    font-size: 30px;
+}
+.generalTabExtra p{
+    font-size: 13px;
+    width: 70%;
+    text-align: center;
+}
+.formCheckElement{
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 13px;
+color: #6C757D;
+position: relative;
+}
+.checkmark {
+    margin-right: 10px;
+
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    border: 1px solid grey;
+    background-color: white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  
+.formCheckElement input{
+    margin-right: -15px;
+
+    opacity: 0;
+    background-color: green;
+    cursor: pointer;
+    height: 20;
+    width: 20;
+    
+}
+.checkInput:checked ~ .checkmark{
+    background-color: #767CF0;
+}
+.formCheckElement label{
+    padding-top: 7px;
+}

@@ -1,0 +1,49 @@
+.PageBar{
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    
+}
+.PageBar h3{
+    color: #6C757D;
+    font-size: 18px;
+    font-family: 'Arial-Narrow', Arial;
+    line-height: 85px;
+    overflow: hidden;
+    font-style: italic;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: auto;
+}
+.ButtonContainer
+{
+    align-self: center;
+    display: block;
+
+}
+@media only screen and (max-width: 767px){
+    .ButtonContainer{
+        display: none;
+    }
+}
+.ButtonContainer button{
+    height: 38px;
+    border: none;
+    margin-left: 5px;
+    color: #fff;
+    background-color: #727cf5;
+    border-color: #727cf5;
+    box-shadow: 0 2px 6px 0 rgba(114, 124, 245, .5);
+    font: 400 13.3333px Arial;
+    font-style: italic;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+}
+.ButtonContainer button:hover{
+    background-color: #565AEC;
+}
+.ButtonContainer button:focus{
+    outline: none;
+        box-shadow: 0 0 0 2pt #C4C7F8;
+}

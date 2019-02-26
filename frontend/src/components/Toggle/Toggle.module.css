@@ -1,0 +1,23 @@
+.Toggle{
+    width: 30px;
+    height: 40px;
+    
+    display: none;
+    position: relative;
+}
+.Toggle p{
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin: 0;
+    padding: 0;
+    width: 25px;
+    height: 2px;
+    background-color: #59616A;
+    margin: 5px;
+}
+
+@media only screen and (max-width: 991px){
+    .Toggle{
+        display: block;
+    }
+}

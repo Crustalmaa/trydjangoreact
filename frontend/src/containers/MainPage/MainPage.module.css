@@ -1,0 +1,108 @@
+.MainPage{
+    display: flex;
+    flex-direction: column;
+    
+}
+.UzuuleltList{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+
+}
+@media only screen and (max-width: 1200px){
+    .UzuuleltList{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 758px){
+    .UzuuleltList{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.Uzuulelt{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 35px 0 rgba(154, 161, 171, .15);
+}
+.Uzuulelt h4{
+    font-size: 12px;
+    font-style: italic;
+    color: #6C757D;
+}
+.Uzuulelt h5{
+    color: rgb(61, 68, 75);
+    font-style: italic;
+}
+.green{
+    color: #00CE9B;
+    font-size: 12px;
+    font-style:italic;
+    margin-right: 15px;
+}
+.red{
+    color: #FF5F7B;
+    font-size: 12px;
+    font-style:italic;
+    margin-right: 15px;
+}
+.Uzuulelt span i{
+     margin-right: 5px;
+}
+.Uzuulelt p{
+    font-size: 12px;
+    color: #97A9B1;
+    font-style: italic;
+    font-weight: bold;
+}
+.SellingProductList{
+    margin-top: 20px;
+    padding-top: 10px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.SellingProductListTitle{
+    display: flex;
+    margin: 15px 20px;
+    justify-content: space-between;
+}
+.SellingProductListTitle h5{
+    text-transform: uppercase;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 14px;
+}
+.SellingProductListTitle button{
+    font-weight: 400;
+    color: #727cf5;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    font-style: italic;
+}
+.SellingProductItem{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    border-top: 1px solid #cccccC;
+    padding: 20px;
+}
+.SellingProductItem p{
+    font-size: 14px !important;
+    margin-bottom: .3rem;
+    font-style: italic;
+    color: #6C7B91;
+}
+.SellingProductItem p span{
+    color: #A5B1AC;
+    font-size: 12px;
+}
+.SellingProductItem p span::before{
+    content: "\A";
+    white-space: pre;
+}
+.SellingProductListContainer{
+    padding: 20px;
+}

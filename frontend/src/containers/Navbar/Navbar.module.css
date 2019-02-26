@@ -1,0 +1,7 @@
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    max-width: 97%;
+    margin: 0 auto;
+    padding-top:20px;
+}

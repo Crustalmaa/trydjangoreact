@@ -1,0 +1,42 @@
+.Footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.FooterPar{
+    margin-right: auto;
+    color: #98a6ad;
+    text-decoration: none;
+    font-size: 14px;
+}
+.Footer ul{
+    display: flex;
+}
+.FooterList{
+    display: block;
+}
+@media only screen and (max-width: 750px){
+    .FooterList{
+        display: none;
+    }
+    .Footer{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .FooterPar{
+        margin-right: 0;
+    }
+}
+.Footer ul li{
+    list-style: none;
+    margin-left: 30px;
+}
+.Footer ul a{
+    color: #98a6ad;
+    text-decoration: none;
+    font-size: 14px;
+}
+.Footer ul a:hover{
+    color: #313a46;
+}

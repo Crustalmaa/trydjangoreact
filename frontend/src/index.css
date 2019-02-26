@@ -1,0 +1,15 @@
+body.boxed-layout {
+  background-color: #fff
+}
+
+body.boxed-layout .wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  background-color: #fafbfe;
+  -webkit-box-shadow: 0 0 35px 0 rgba(154, 161, 171, .15);
+  box-shadow: 0 0 35px 0 rgba(154, 161, 171, .15)
+}
+
+body.boxed-layout.enlarged .footer {
+  max-width: calc(1300px - 70px)
+}
