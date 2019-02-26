@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class="container-fluid">
+        {% include 'layouts/page_title.html' with title="Тээврийн хэрэслийн даатгал" %}
+
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div class="card" style="padding: 10px">
+                    <div class="card-body">
+                        <div id="vehicleCreateWizard">
+                            <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
+                                <li class="nav-item" data-target-form="#vehicleForm">
+                                    <a href="#vehicleTab" data-toggle="tab"
+                                       class="nav-link rounded-0 pt-2 pb-2 show active">
+                                        <i class="mdi mdi-account-circle mr-1"></i>
+                                        <span class="d-none d-sm-inline">Тээврийн хэрэгслийн мэдээлэл</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" data-target-form="#insurerForm">
+                                    <a href="#insurerTab" data-toggle="tab"
+                                       class="nav-link rounded-0 pt-2 pb-2 show">
+                                        <i class="mdi mdi-face-profile mr-1"></i>
+                                        <span class="d-none d-sm-inline">Даатгуулагчийн мэдээлэл</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" data-target-form="#generalForm">
+                                    <a href="#generalTab" data-toggle="tab"
+                                       class="nav-link rounded-0 pt-2 pb-2 show">
+                                        <i class="mdi mdi-checkbox-marked-circle-outline mr-1"></i>
+                                        <span class="d-none d-sm-inline">Ерөнхий мэдээлэл</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content b-0 mb-0">
+                                <div id="bar" class="progress mb-3" style="height: 7px;">
+                                    <div class="bar progress-bar progress-bar-striped progress-bar-animated bg-success"
+                                         style="width: 33.3333%;"></div>
+                                </div>
+
+                                <div class="tab-pane show active" id="vehicleTab">
+                                    <form id="vehicleForm">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                {% for field in vehicleForm %}
+                                                    {% bootstrap_field field layout='horizontal' form_group_class="form-group row mb-3" %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="tab-pane show" id="insurerTab">
+                                    <form id="insurerForm">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                {% for field in insurerForm %}
+                                                    {% bootstrap_field field layout='horizontal' form_group_class="form-group row mb-3" %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="tab-pane show" id="generalTab">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="text-center">
+                                                <h2 class="mt-0"><i class="mdi mdi-check-all"></i></h2>
+                                                <h3 class="mt-0">Thank you !</h3>
+
+                                                <p class="w-75 mb-2 mx-auto">Quisque nec turpis at urna dictum
+                                                    luctus. Suspendisse convallis dignissim eros at volutpat. In
+                                                    egestas mattis dui. Aliquam
+                                                    mattis dictum aliquet.</p>
+
+                                                <div class="mb-3">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                               id="customCheck3">
+                                                        <label class="custom-control-label" for="customCheck3">I
+                                                            agree with the Terms and Conditions</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> <!-- end col -->
+                                    </div> <!-- end row -->
+                                </div>
+
+                                <ul class="list-inline mb-0 wizard">
+                                    <li class="previous list-inline-item disabled">
+                                        <button type="button" class="btn btn-info">Prev</button>
+                                    </li>
+                                    <li class="next list-inline-item float-right">
+                                        <button type="button" class="btn btn-info">Next</button>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function () {
+            $('#vehicleCreateWizard').bootstrapWizard({
+                onTabShow: function (tab, navigation, index) {
+                    let total = navigation.find('li').length;
+                    let current = index + 1;
+                    let percent = (current / total) * 100;
+                    $('#vehicleCreateWizard .bar').css({width: percent + '%'});
+                },
+                onNext: function (tab, navigation, index) {
+                    let o = $($(tab).data("targetForm"));
+                    if (o && o.addClass("was-validated") && o[0].checkValidity() === false) {
+                        return event.preventDefault(), event.stopPropagation(), false
+                    }
+                }
+            })
+        })
+    </script>
+{% endblock %}

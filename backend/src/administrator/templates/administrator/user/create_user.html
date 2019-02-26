@@ -1,0 +1,54 @@
+{% extends 'administrator/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class="container-fluid">
+        {% include 'administrator/layouts/page_title.html' with title='Хэрэглэгч нэмэх' %}
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+
+                            <div class="form-row">
+                                {% bootstrap_field form.username form_group_class="form-group col-md-6" %}
+                                {% bootstrap_field form.email form_group_class="form-group col-md-6" %}
+                            </div>
+
+                            <div class="form-row">
+                                {% bootstrap_field form.last_name form_group_class="form-group col-md-6" %}
+                                {% bootstrap_field form.first_name form_group_class="form-group col-md-6" %}
+                            </div>
+
+                            <div class="form-row">
+                                {% bootstrap_field form.regno form_group_class="form-group col-md-6" %}
+                                {% bootstrap_field form.phone form_group_class="form-group col-md-6" %}
+                            </div>
+
+                            <div class="form-row">
+                                {% bootstrap_field form.password1 form_group_class="form-group col-md-6" %}
+                                {% bootstrap_field form.password2 form_group_class="form-group col-md-6" %}
+                            </div>
+
+                            <div class="form-row">
+                                {% bootstrap_field form.company form_group_class="form-group col-md-6" %}
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="moderator"
+                                           name="moderator">
+                                    <label class="custom-control-label" for="moderator">Удирдах эрх</label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Хадгалах</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

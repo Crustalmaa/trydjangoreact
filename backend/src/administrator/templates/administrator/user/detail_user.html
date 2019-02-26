@@ -1,0 +1,136 @@
+{% extends 'administrator/base.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+        {% include 'administrator/layouts/page_title.html' with title='Хэрэглэгчийн дэлгэрэнгүй' %}
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card bg-primary">
+                    <div class="card-body profile-user-box">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h4 class="mt-1 mb-1 text-white">{{ object.get_full_name|default:"Хэрэглэгч" }}</h4>
+                                        <p class="font-13 text-white-50"> Authorised Brand Seller</p>
+
+                                        <ul class="mb-0 list-inline text-light">
+                                            <li class="list-inline-item mr-3">
+                                                <h5 class="mb-1">$ 25,184</h5>
+                                                <p class="mb-0 font-13 text-white-50">Total Revenue</p>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <h5 class="mb-1">5482</h5>
+                                                <p class="mb-0 font-13 text-white-50">Number of Orders</p>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- end media-body-->
+                                </div>
+                            </div> <!-- end col-->
+
+                            <div class="col-sm-4">
+                                <div class="text-center mt-sm-0 mt-3 text-sm-right">
+                                    <button type="button" class="btn btn-light">
+                                        <i class="mdi mdi-account-edit mr-1"></i> Засварлах
+                                    </button>
+                                </div>
+                            </div> <!-- end col-->
+                        </div> <!-- end row -->
+
+                    </div> <!-- end card-body/ profile-user-box-->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-left">
+                            <p class="text-muted"><strong>Бүтэн нэр :</strong> <span
+                                    class="ml-2">{{ object.get_full_name|default:"Хэрэглэгч" }}</span></p>
+
+                            <p class="text-muted"><strong>Утас :</strong><span
+                                    class="ml-2">{{ object.phone|default:"Байхгүй" }}</span>
+                            </p>
+
+                            <p class="text-muted"><strong>Байгуулага :</strong><span
+                                    class="ml-2">{{ object.company|default:"Байхгүй" }}</span>
+                            </p>
+
+                            <p class="text-muted"><strong>Имэйл хаяг :</strong> <span
+                                    class="ml-2">{{ object.email }}</span></p>
+
+                            <p class="text-muted mb-0"><strong>Холбоос :</strong>
+                                <a class="d-inline-block ml-2 text-muted" title="" data-placement="top"
+                                   data-toggle="tooltip" href="#" data-original-title="Facebook"><i
+                                        class="mdi mdi-facebook"></i></a>
+                                <a class="d-inline-block ml-2 text-muted" title="" data-placement="top"
+                                   data-toggle="tooltip" href="#" data-original-title="Twitter"><i
+                                        class="mdi mdi-twitter"></i></a>
+                                <a class="d-inline-block ml-2 text-muted" title="" data-placement="top"
+                                   data-toggle="tooltip" href="#" data-original-title="Skype"><i
+                                        class="mdi mdi-skype"></i></a>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="header-title mb-3">Нийт хийсэн даатгал</h4>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover table-centered mb-0">
+                                <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Amount</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>ASOS Ridley High Waist</td>
+                                    <td>$79.49</td>
+                                    <td><span class="badge badge-primary">82 Pcs</span></td>
+                                    <td>$6,518.18</td>
+                                </tr>
+                                <tr>
+                                    <td>Marco Lightweight Shirt</td>
+                                    <td>$128.50</td>
+                                    <td><span class="badge badge-primary">37 Pcs</span></td>
+                                    <td>$4,754.50</td>
+                                </tr>
+                                <tr>
+                                    <td>Half Sleeve Shirt</td>
+                                    <td>$39.99</td>
+                                    <td><span class="badge badge-primary">64 Pcs</span></td>
+                                    <td>$2,559.36</td>
+                                </tr>
+                                <tr>
+                                    <td>Lightweight Jacket</td>
+                                    <td>$20.00</td>
+                                    <td><span class="badge badge-primary">184 Pcs</span></td>
+                                    <td>$3,680.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Marco Shoes</td>
+                                    <td>$28.49</td>
+                                    <td><span class="badge badge-primary">69 Pcs</span></td>
+                                    <td>$1,965.81</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

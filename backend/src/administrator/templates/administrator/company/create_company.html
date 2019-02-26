@@ -1,0 +1,21 @@
+{% load bootstrap4 %}
+
+<div class="modal-header">
+    <h4 class="modal-title" id="NewCompanyCreateModal">Шинээр байгууллага үүсгэх</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+</div>
+<div class="modal-body">
+    <form class="p-2 was-validated" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-10">
+                {% bootstrap_field form.name %}
+            </div>
+        </div>
+
+        <div class="text-right">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Болих</button>
+            <button type="button" class="submit-btn btn btn-primary">Хадгалах</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,79 @@
+{% extends 'administrator/base.html' %}
+{% load humanize %}
+{% load bootstrap4 %}
+
+{% block styles %}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.2/css/responsive.bootstrap4.min.css">
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        {% include 'administrator/layouts/page_title.html' with title='Хэрэглэгч жагсаалт' %}
+        <div class="row mb-2">
+            <div class="col-sm-4">
+                <a href="{% url 'administrator:create-user' %}" class="btn btn-danger btn-rounded mb-3"><i
+                        class="mdi mdi-plus"></i> Хэрэглэгч
+                    үүсгэх
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table id="user-list-table" class="table dt-responsive nowrap" width="100%">
+                            <thead>
+                            <tr>
+                                <th>Хэрэглэгчийн нэр</th>
+                                <th>Овог, нэр</th>
+                                <th>Имэйл хаяг</th>
+                                <th>Утасны дугаар</th>
+                                <th>Байгууллага</th>
+                                <th>Сүүлд нэвтэрсэн</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for user in object_list %}
+                                <tr>
+                                    <td><a href="{% url 'administrator:detail-user' user.pk %}">{{ user.username }}</a>
+                                    </td>
+                                    <td>{{ user.get_short_name }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.phone|default:'-' }}</td>
+                                    <td>{{ user.company|default_if_none:"-" }}</td>
+                                    <td>{{ user.last_login|naturaltime|default_if_none:"-" }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.2/js/responsive.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#user-list-table').DataTable({
+                keys: !0,
+                language: {
+                    paginate: {
+                        previous: "<i class='mdi mdi-chevron-left'>",
+                        next: "<i class='mdi mdi-chevron-right'>"
+                    }
+                },
+                drawCallback: function () {
+                    $(".dataTables_paginate > .pagination").addClass("pagination-rounded")
+                }
+            })
+        })
+    </script>
+{% endblock %}

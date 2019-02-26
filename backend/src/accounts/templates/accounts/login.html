@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap4 %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Online Insurance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'main_site/css/app.min.css' %}" rel="stylesheet" type="text/css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {"families": ["Roboto:300,400,500,600,700"]},
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+</head>
+
+<body class="authentication-bg">
+
+<div class="account-pages mt-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card">
+                    <div class="card-header pt-4 pb-4 text-center bg-primary">
+                        <span><img src="{% static 'main_site/images/logo.png' %}" alt="" height="40"></span>
+                    </div>
+
+                    <div class="card-body p-4">
+                        <div class="text-center w-75 m-auto">
+                            <h4 class="text-dark-50 text-center mt-0 font-weight-bold">Нэвтрэх</h4>
+                            <p class="text-muted mb-4">Бүртгэлтэй хэрэглэгчийн нэрээр нэвтэрч даатгал хийнэ үү.</p>
+                        </div>
+
+                        <form method="post">
+                            {% csrf_token %}
+                            {% bootstrap_form form %}
+
+                            <div class="form-group mb-3">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="checkbox-signin">
+                                            <label class="custom-control-label" for="checkbox-signin">Намайг
+                                                сана</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <a href="#" class="text-muted float-right">
+                                            <small>Нууц үгээ мартсан уу?</small>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group mb-0 text-center">
+                                <button class="btn btn-primary" type="submit">Нэвтрэх</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- App js -->
+<script src="{% static 'main_site/js/app.min.js' %}"></script>
+</body>
+
+</html>
